@@ -17,9 +17,10 @@ public class ForDemo {
 		
 		
 		
+		
+		
 		//±¸±¸´Ü
 		for (int j=2; j<=9;j++){
-			if (j==6) continue;
 			for (int k=1; k<=9; k++){
 				System.out.println(j+"*"+k+"="+(j*k));
 			}
