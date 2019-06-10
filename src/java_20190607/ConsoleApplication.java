@@ -6,8 +6,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class ConsoleApplication {
-	//instance변수 자리에 new를 쓰면 되긴하나 개발자들은 개발자의 기본이 안되있다고 생각한다
-	/*private ArrayList<Member> list= new ArrayList<Member>();*/
+	// instance변수 자리에 new를 쓰면 되긴하나 개발자들은 개발자의 기본이 안되있다고 생각한다
+	/* private ArrayList<Member> list= new ArrayList<Member>(); */
 	private ArrayList<Member> list;
 
 	public ConsoleApplication() {
@@ -20,6 +20,7 @@ public class ConsoleApplication {
 		System.out.println("****************************************************");
 	}
 
+	// 키보드로 입력받은 한줄을 반환하는 함수
 	public String console(String message) throws IOException {
 		System.out.println(message);
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -61,6 +62,10 @@ public class ConsoleApplication {
 		Member m = new Member(name, id);
 		list.add(m);
 
+		common();
+	}
+
+	private void common() throws IOException {
 		for (Member m1 : list) {
 			/*
 			 * System.out.printf("아이디: %s,이름: %s$n", m1.getId(), m1.getName());
@@ -152,25 +157,23 @@ public class ConsoleApplication {
 		System.out.println("**********************검색 결과**************************");
 		boolean isExisted = false;
 		for (int i = 0; i < list.size(); i++) {
-		Member m = list.get(i);
+			Member m = list.get(i);
 			if (searchId.equals(m.getId())) {
 				isExisted = true;
 				System.out.println(m);
 				break;
 			}
 		}
-			if (!isExisted) {
-				System.out.println("아이디가 없습니다");
-			}
-			print();
-
-			String message = console("선택하세요 : ");
-
-			execute(message);
+		if (!isExisted) {
+			System.out.println("아이디가 없습니다");
 		}
-			
-			
-			
+		print();
+
+		String message = console("선택하세요 : ");
+
+		execute(message);
+	}
+
 	public static void main(String[] args) throws IOException {
 		ConsoleApplication c = new ConsoleApplication();
 		c.print();
