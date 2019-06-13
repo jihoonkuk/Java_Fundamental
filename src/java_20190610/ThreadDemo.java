@@ -11,7 +11,6 @@ public class ThreadDemo extends Thread {
 		for (int i = 0; i < 1000; i++) {
 			String threadName = Thread.currentThread().getName();
 			System.out.println(threadName + " : " + i);
-			;
 		}
 	}
 
