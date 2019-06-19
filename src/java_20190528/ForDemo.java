@@ -41,7 +41,7 @@ public class ForDemo {
 			*/
 		
 		
-/*		//¸ÁÇÑ°Í
+/*		//¿¬½À-¸ÁÇÑ°Í
 		for (int l=1; l<=100; l++){
 			for (int n=1; n<=100; n++)
 				if (l%n== int || (l==1 && l==n) )
